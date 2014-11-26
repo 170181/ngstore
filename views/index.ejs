@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html ng-app="storeapp">
+    <head>
+        <title>ngStore</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+
+        <script type="application/javascript" src="/javascripts/jquery-1.11.1.js"></script>      
+        <script type="application/javascript" src="/javascripts/angular.js"></script>   
+        <script type="application/javascript" src="/javascripts/angular-route.js"></script>
+        <script type="application/javascript" src="/javascripts/angular-resource.js"></script>
+    </head>
+    
+    <body>
+        <header>
+            <span>ngStore</span>
+        </header>
+        
+        <div ng-view>
+        </div>
+    </body>
+    
+    
+    <script type="application/javascript" src="/app/app.js"></script>
+    <script type="application/javascript" src="/app/controllers/HomeController.js"></script>
+    <script type="application/javascript" src="/app/controllers/ClienteEditController.js"></script>
+    <script type="application/javascript" src="/app/controllers/ClienteListController.js"></script>
 </html>
