@@ -25,6 +25,11 @@ header #logo {
     font-size: 14pt;
 }
 
+header #logo:hover {
+    cursor: pointer;
+    color: #ffffff;
+}
+
 header #menu {
     list-style: none;
     padding: 0;
@@ -67,7 +72,6 @@ header #menu li.active, li:hover {
 
 .dashboard-item .icon {
     border-radius: 100%;
-    background-color: #2FA281;
     width: 100px;
     height: 100px;
     line-height: 100px;
@@ -94,3 +98,36 @@ header #menu li.active, li:hover {
     color: #d3d3d3;
 }
 
+.green-background {   
+    background-color: #2FA281;
+}
+
+.light-green-background {
+    background-color: #00B2C2;
+}
+
+.yellow-background {
+    background-color: #EDCE83;
+}
+
+.orange-background {
+    background-color: #FFBD4C;
+}
+
+.cover {
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.cover h1 {
+    font-size: 60pt;
+    color: #4d4d4d;
+    font-weight: normal;
+}
+
+.cover h2 {
+    font-size: 30pt;
+    color: #969696;
+    font-weight: normal;
+}
