@@ -3,6 +3,7 @@
     <head>
         <title>ngStore</title>
         <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel="stylesheet" href="/stylesheets/font-awesome.min.css"/>
 
         <script type="application/javascript" src="/javascripts/jquery-1.11.1.js"></script>      
         <script type="application/javascript" src="/javascripts/angular.js"></script>   
@@ -12,7 +13,22 @@
     
     <body>
         <header>
-            <span>ngStore</span>
+            <span id="logo">ngStore</span>
+            
+            <ul id="menu">
+                <li class="active"> 
+                    <a href="#/"><i class="fa fa-home fa-fw"></i> Home</a>
+                </li>
+                <li> 
+                    <a href="#/clientes"><i class="fa fa-group fa-fw"></i> Clientes</a>
+                </li>
+                <li>
+                    <a href="#/produtos"><i class="fa fa-inbox fa-fw"></i> Produtos</a>
+                </li>
+                <li>
+                    <a href="#/vendas"><i class="fa fa-suitcase fa-fw"></i> Vendas</a>
+                </li>
+            </ul>
         </header>
         
         <div ng-view>

@@ -18,3 +18,4 @@ angular.module('storeapp', ['ngResource', 'ngRoute']).config(['$routeProvider', 
             controller: 'HomeController'
         });
 }]);
+

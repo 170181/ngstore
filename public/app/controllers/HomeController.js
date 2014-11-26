@@ -1,5 +1,7 @@
 angular.module('storeapp').controller('HomeController', ['$scope', function ($scope) {
 
-    $scope.texto = "Titulo";
+    $scope.clientesCount = 0;
+    $scope.produtosCount = 0;
+    $scope.vendasCount = 0;
     
 }]);
