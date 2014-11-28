@@ -11,6 +11,10 @@ angular.module("storeapp").factory("ClienteService", ["$resource", function($res
         return ClienteService.save(clienteObj).$promise;
     }
     
+    ClienteService.buscarPorId = function(clienteId) {
+        return ClienteService.get({id:clienteId}).$promise;
+    }
+    
     return ClienteService;
     
 }]);

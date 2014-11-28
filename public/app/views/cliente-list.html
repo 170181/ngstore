@@ -2,6 +2,7 @@
     <h1>Clientes Cadastrados</h1>
     
     <div class="page-actions">
+        <button class="btn primary" ng-click="atualizarLista()">Atualizar Lista</button>
         <a class="btn success" href="#/clientes/adicionar">Novo Cliente</a>
     </div>
 </div>
@@ -17,12 +18,12 @@
     </thead>
     <tbody>
         <tr ng-repeat="c in clientes">
-            <td>{{c.id}}</td>
+            <td>{{c._id}}</td>
             <td>{{c.nome}}</td>
             <td>{{c.telefone}}</td>
-            <td>
-                <a href="#" ng-click="editar(c)">Editar</a> | 
-                <a href="#" ng-click="excluir(c)">Excluir</a>
+            <td class="text-center">
+                <a href="#/clientes/edit/{{c._id}}" class="action-link">Editar</a> | 
+                <a href="#" class="action-link" ng-click="excluir(c)">Excluir</a>
             </td>
         </tr>
     </tbody>

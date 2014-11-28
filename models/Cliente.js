@@ -18,6 +18,11 @@ schema.statics.listAll = function(callback) {
     this.find(callback); 
 }
 
+/* Busca um cliente pelo seu id. */
+schema.statics.findById = function(id, callback) {
+    this.findOne({_id:id}, callback);
+}
+
 
 module.exports = mongoose.model("Cliente", schema);
 

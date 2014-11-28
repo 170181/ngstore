@@ -8,6 +8,10 @@ angular.module('storeapp', ['ngResource', 'ngRoute']).config(['$routeProvider', 
             templateUrl: '/app/views/cliente-list.html',
             controller: 'ClienteListController'
         })
+        .when('/clientes/edit/:id', {
+            templateUrl: '/app/views/cliente-edit.html',
+            controller: 'ClienteEditController'
+        })
         .when('/clientes/adicionar', {
             templateUrl: '/app/views/cliente-edit.html',
             controller: 'ClienteEditController'
