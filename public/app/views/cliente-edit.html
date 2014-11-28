@@ -1,41 +1,46 @@
-<h1>Cadastro de Cliente</h1>
+<div class="page-header">
+    <h1>Cadastrar Novo Cliente</h1>
+</div>
 
 <form>
-    <div>
-        <label>Nome:</label>
-        <input type="text" name="nome" id="nome" ng-model="cliente.nome"/>
+    <div class="form-instructions">
+        Os campos marcados com <span class="fa fa-hand-o-right red"></span> são obrigatórios.
     </div>
-
-    <div>
-        <label>CPF:</label>
-        <input type="text" name="cpf" id="cpf" ng-model="cliente.cpf"/>
-    </div>
-
-    <fieldset>
-        <legend>Endereço</legend>
-        <div>
-            <label>Rua:</label>
-            <input type="text" name="rua" id="rua" ng-model="cliente.rua"/>
-        </div>
-        <div>
-            <label>Bairro:</label>
-            <input type="text" name="bairro" id="bairro" ng-model="cliente.bairro"/>
-        </div>
-        <div>
-            <label>Cidade:</label>
-            <input type="text" name="cidade" id="cidade" ng-model="cliente.cidade"/>
-        </div>
-        <div>
-            <label>Estado:</label>
-            <input type="text" name="estado" id="estado" ng-model="cliente.estado"/>
-        </div>
-        <div>
-            <label>CEP:</label>
-            <input type="text" name="cep" id="cep" ng-model="cliente.cep"/>
-        </div>
-    </fieldset>
     
-    <button ng-click="salvar()">Salvar</button>
+    <div class="field-group">
+        <label><span class="fa fa-hand-o-right red" style="font-size: 9pt;"></span> nome:</label>
+        <input type="text" name="nome" class="xxlarge" ng-model="cliente.nome"/>
+    </div>
+
+    <div class="field-group">
+        <label>cpf:</label>
+        <input type="text" name="cpf" class="medium" ng-model="cliente.cpf"/>
+    </div>
+        
+    <div class="field-group">
+        <label>rua:</label>
+        <input type="text" name="rua" class="xxlarge" ng-model="cliente.rua"/>
+    </div>
+    <div class="field-group">
+        <label>bairro:</label>
+        <input type="text" name="bairro" class="xlarge" ng-model="cliente.bairro"/>
+    </div>
+    <div class="field-group">
+        <label>cidade:</label>
+        <input type="text" name="cidade" class="medium" ng-model="cliente.cidade"/>
+    </div>
+    <div class="field-group">
+        <label>estado:</label>
+        <input type="text" name="estado" class="xsmall" maxlength="2" ng-model="cliente.estado"/>
+    </div>
+    <div class="field-group">
+        <label>cep:</label>
+        <input type="text" name="cep" class="medium" ng-model="cliente.cep"/>
+    </div>
+    
+    <div class="form-actions">
+        <button class="btn success" ng-click="salvar()">Salvar</button>
+    </div>
 </form>
 
 

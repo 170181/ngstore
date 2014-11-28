@@ -7,6 +7,7 @@ router.post('/clientes', function(req, res) {
     var cliente = new Cliente(req.json);
     cliente.save(function(err, obj) {
         if(err) res.send(404);
+        res.send(200);
     });
 });
 
