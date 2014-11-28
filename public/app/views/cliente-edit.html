@@ -1,0 +1,41 @@
+<h1>Cadastro de Cliente</h1>
+
+<form>
+    <div>
+        <label>Nome:</label>
+        <input type="text" name="nome" id="nome" ng-model="cliente.nome"/>
+    </div>
+
+    <div>
+        <label>CPF:</label>
+        <input type="text" name="cpf" id="cpf" ng-model="cliente.cpf"/>
+    </div>
+
+    <fieldset>
+        <legend>Endereço</legend>
+        <div>
+            <label>Rua:</label>
+            <input type="text" name="rua" id="rua" ng-model="cliente.rua"/>
+        </div>
+        <div>
+            <label>Bairro:</label>
+            <input type="text" name="bairro" id="bairro" ng-model="cliente.bairro"/>
+        </div>
+        <div>
+            <label>Cidade:</label>
+            <input type="text" name="cidade" id="cidade" ng-model="cliente.cidade"/>
+        </div>
+        <div>
+            <label>Estado:</label>
+            <input type="text" name="estado" id="estado" ng-model="cliente.estado"/>
+        </div>
+        <div>
+            <label>CEP:</label>
+            <input type="text" name="cep" id="cep" ng-model="cliente.cep"/>
+        </div>
+    </fieldset>
+    
+    <button ng-click="salvar()">Salvar</button>
+</form>
+
+

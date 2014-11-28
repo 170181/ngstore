@@ -1,0 +1,24 @@
+<h1>Clientes Cadastrados</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="c in clientes">
+            <td>{{c.id}}</td>
+            <td>{{c.nome}}</td>
+            <td>{{c.telefone}}</td>
+            <td>
+                <a href="#" ng-click="editar(c)">Editar</a> | 
+                <a href="#" ng-click="excluir(c)">Excluir</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
