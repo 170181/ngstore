@@ -211,6 +211,12 @@ header #menu li.active, li:hover {
     background-color: #679b2b;
 }
 
+.btn.success:disabled {
+    border: solid #d3ddc8 1px;
+    background-color: #d3ddc8;
+    color: #fcfcfc;
+}
+
 .btn.primary {
     background-color: #3991C8;
     border: solid #40AFF5 1px;
@@ -312,6 +318,14 @@ form input.xlarge {
 
 form input.xxlarge {
     width: 500px;
+}
+
+form input.has-error {
+    border: solid #E65853 1px;
+}
+
+form input.has-success {
+    border: solid #87B422 1px;
 }
 
 form .form-actions {

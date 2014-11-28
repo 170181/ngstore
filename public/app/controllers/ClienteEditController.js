@@ -1,5 +1,6 @@
-angular.module("storeapp").controller("ClienteEditController", ['$scope', '$log', '$location', '$routeParams', 'ClienteService', function($scope, $log, $location, $routeParams, ClienteService) {
+angular.module("storeapp").controller("ClienteEditController", ['$scope', '$log', '$location', '$routeParams', 'ClienteService', 'FormService', function($scope, $log, $location, $routeParams, ClienteService, FormService) {
 
+    $scope.FormService = FormService;
     $scope.cliente = {};
     
     if($routeParams.id != null) {

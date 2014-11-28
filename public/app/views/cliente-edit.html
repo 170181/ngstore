@@ -1,20 +1,25 @@
 <div class="page-header">
     <h1>Cadastrar Novo Cliente</h1>
+    
+    <div class="page-actions">
+        <button class="btn success" ng-click="salvar()" ng-disabled="!FormService.formularioValido(clienteForm)"><span class="fa fa-floppy-o fa-fw"></span> Salvar</button>
+        <button class="btn default" ng-click="cancelar()">Cancelar</button>
+    </div>
 </div>
 
-<form>
+<form name="clienteForm" novalidate>
     <div class="form-instructions">
         Os campos marcados com <span class="fa fa-hand-o-right red"></span> são obrigatórios.
     </div>
     
     <div class="field-group">
         <label><span class="fa fa-hand-o-right red" style="font-size: 9pt;"></span> nome:</label>
-        <input type="text" name="nome" class="xxlarge" ng-model="cliente.nome"/>
+        <input type="text" name="nome" required class="xxlarge" ng-model="cliente.nome" ng-class="FormService.getCssClass(clienteForm.nome)"/>
     </div>
 
     <div class="field-group ">
         <label><span class="fa fa-hand-o-right red" style="font-size: 9pt;"></span> cpf:</label>
-        <input type="text" name="cpf" class="medium" ng-model="cliente.cpf"/>
+        <input type="text" name="cpf" required class="medium" ng-model="cliente.cpf" ng-class="FormService.getCssClass(clienteForm.cpf)"/>
     </div>
         
     <div class="field-group">
@@ -47,7 +52,7 @@
     </div>
     
     <div class="form-actions">
-        <button class="btn success" ng-click="salvar()"><span class="fa fa-floppy-o fa-fw"></span> Salvar</button>
+        <button class="btn success" ng-click="salvar()" ng-disabled="!FormService.formularioValido(clienteForm)"><span class="fa fa-floppy-o fa-fw"></span> Salvar</button>
         <button class="btn default" ng-click="cancelar()">Cancelar</button>
     </div>
 </form>
