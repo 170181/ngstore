@@ -228,7 +228,7 @@ header #menu li.active, li:hover {
 .btn.default {
     background-color: #f8f8f8;
     border: solid #d6d6d6 1px;
-    color: #a0a0a0;
+    color: #272727;
 }
 
 .btn.default:hover {
