@@ -38,6 +38,11 @@ schema.statics.atualizar = function(clienteObj, callback) {
     this.findByIdAndUpdate(clienteObj.id, clienteObj, callback);
 }
 
+/* Calcula o número de clientes cadastrados. */
+schema.statics.totalCadastrados = function(callback) {
+    this.count(callback);
+}
+
 
 module.exports = mongoose.model("Cliente", schema);
 
