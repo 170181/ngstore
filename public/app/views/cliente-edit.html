@@ -12,14 +12,18 @@
         <input type="text" name="nome" class="xxlarge" ng-model="cliente.nome"/>
     </div>
 
-    <div class="field-group">
-        <label>cpf:</label>
+    <div class="field-group ">
+        <label><span class="fa fa-hand-o-right red" style="font-size: 9pt;"></span> cpf:</label>
         <input type="text" name="cpf" class="medium" ng-model="cliente.cpf"/>
     </div>
         
     <div class="field-group">
         <label>rua:</label>
-        <input type="text" name="rua" class="xxlarge" ng-model="cliente.rua"/>
+        <input type="text" name="rua" class="xxlarge" ng-model="cliente.logradouro"/>
+    </div>        
+    <div class="field-group">
+        <label>número:</label>
+        <input type="text" name="numero" class="xsmall" ng-model="cliente.numero"/>
     </div>
     <div class="field-group">
         <label>bairro:</label>
@@ -37,9 +41,14 @@
         <label>cep:</label>
         <input type="text" name="cep" class="medium" ng-model="cliente.cep"/>
     </div>
+    <div class="field-group">
+        <label>telefone:</label>
+        <input type="text" name="telefone" class="medium" ng-model="cliente.telefone"/>
+    </div>
     
     <div class="form-actions">
-        <button class="btn success" ng-click="salvar()">Salvar</button>
+        <button class="btn success" ng-click="salvar()"><span class="fa fa-floppy-o fa-fw"></span> Salvar</button>
+        <button class="btn default" ng-click="cancelar()">Cancelar</button>
     </div>
 </form>
 

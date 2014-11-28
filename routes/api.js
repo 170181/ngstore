@@ -6,12 +6,14 @@ var Cliente = require("../models/Cliente");
  * POST /api/clientes
  * Salvar cliente. 
  **/
-router.post('/clientes', function(req, res) {
-    console.log(req.body);
-    
-    var cliente = new Cliente(req.body);
-    cliente.save(function(err, obj) {
-        if(err) res.send(404);
+router.post('/clientes', function(req, res) {    
+    // req.body representa o objeto JSON cliente recebido na requisição POST.
+    Cliente.salvar(req.body, function(error, obj) {
+        if(error) {
+            console.log(error);
+            res.status(500).send(error.err);
+            return;
+        }
         res.json({message: "ok"});
     });
 });
@@ -22,9 +24,10 @@ router.post('/clientes', function(req, res) {
  * Listar clientes. 
  **/
 router.get('/clientes', function(req, res) {
-    Cliente.listAll(function(err, list) {
-        if(err) {
-            res.send(404);
+    Cliente.listarTodos(function(error, list) {
+        if(error) {
+            console.log(error);
+            res.status(500).send(error.err);
             return;
         }
         
@@ -38,9 +41,10 @@ router.get('/clientes', function(req, res) {
  * Recupera um cliente a partir do seu id.
  **/
 router.get('/clientes/:id', function(req, res) {
-    Cliente.findById(req.params.id, function(err, obj) {
-        if(err) {
-            res.send(404);
+    Cliente.buscarPorId(req.params.id, function(error, obj) {
+        if(error) {
+            console.log(error);
+            res.status(500).send(error.err);
             return;
         }
         

@@ -10,17 +10,23 @@
 <table ng-if="clientes.length">
     <thead>
         <tr>
-            <th>ID</th>
             <th>Nome</th>
+            <th>CPF</th>
             <th>Telefone</th>
+            <th>Endereço</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         <tr ng-repeat="c in clientes">
-            <td>{{c._id}}</td>
             <td>{{c.nome}}</td>
+            <td>{{c.cpf}}</td>
             <td>{{c.telefone}}</td>
+            <td>
+                {{c.logradouro}} - {{c.numero}}<br/>
+                {{c.cidade}} - {{c.estado}}<br/>
+                {{c.cep}}
+            </td>
             <td class="text-center">
                 <a href="#/clientes/edit/{{c._id}}" class="action-link">Editar</a> | 
                 <a href="#" class="action-link" ng-click="excluir(c)">Excluir</a>

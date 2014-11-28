@@ -13,14 +13,29 @@ var schema = new mongoose.Schema({
     telefone: String
 });
 
+/* Salvar o registro de um cliente. Caso exista um registro com o mesmo id, o mesmo será atualizado com os novos dados. */
+schema.statics.salvar = function(clienteObj, callback) {
+    if(!clienteObj._id) {
+        this.create(clienteObj, callback);
+    } 
+    else {
+        this.findByIdAndUpdate(clienteObj._id, clienteObj, callback);
+    }
+}
+
 /* Lista todos os clientes cadastrados. */
-schema.statics.listAll = function(callback) {
+schema.statics.listarTodos = function(callback) {
     this.find(callback); 
 }
 
 /* Busca um cliente pelo seu id. */
-schema.statics.findById = function(id, callback) {
-    this.findOne({_id:id}, callback);
+schema.statics.buscarPorId = function(id, callback) {
+    this.findById(id, callback);
+}
+
+/* Atualiza o registro de um cliente existente. */
+schema.statics.atualizar = function(clienteObj, callback) {
+    this.findByIdAndUpdate(clienteObj.id, clienteObj, callback);
 }
 
 
