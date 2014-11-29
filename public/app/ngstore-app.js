@@ -16,6 +16,14 @@ angular.module('storeapp', ['ngResource', 'ngRoute']).config(['$routeProvider', 
             templateUrl: '/app/views/cliente-edit.html',
             controller: 'ClienteEditController'
         })
+        .when('/produtos', {
+            templateUrl: '/app/views/produto-list.html',
+            controller: 'ProdutoListController'
+        })
+        .when('/vendas', {
+            templateUrl: '/app/views/venda-list.html',
+            controller: 'VendaListController'
+        })
         .otherwise({ 
             redirectTo: '/',
             templateUrl: '/app/views/home.html',
