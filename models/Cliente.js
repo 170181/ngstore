@@ -43,6 +43,18 @@ schema.statics.totalCadastrados = function(callback) {
     this.count(callback);
 }
 
+/* Exclui um cliente cadastrado. */
+schema.statics.excluir = function(id, callback) {
+    this.findById(id, function(err, cliente) {
+        if(err) { 
+            callback(err, null);    
+        }
+        else {
+            cliente.remove(callback);
+        }
+    });
+}
+
 
 module.exports = mongoose.model("Cliente", schema);
 

@@ -17,6 +17,22 @@ angular.module("storeapp").controller("ClienteListController", ['$scope', '$log'
     }
     
     
+    /**
+     * Excluir um cliente do banco de dados.
+     **/
+    $scope.excluir = function(id) {
+        ClienteService.excluirCliente(id)
+            .then(function(response) {
+                alert("Cliente excluído!");
+                $scope.atualizarLista();
+            })
+            .catch(function(error) {
+                alert("Erro ao excluir o cliente. Motivo: " + angular.toJson(error));
+                $log.log(error);
+            });
+    }
+    
+    
     // Instruções executadas fora de um método ou função fazem parte do construtor do controlador.
     $scope.atualizarLista();
     

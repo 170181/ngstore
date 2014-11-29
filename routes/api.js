@@ -37,10 +37,10 @@ router.get('/clientes', function(req, res) {
 
 
 /* 
- * GET /api/clientes/:id
+ * GET /api/clientes/:int(\\d+)
  * Recupera um cliente a partir do seu id.
  **/
-router.get('/clientes/:int(\\d+)', function(req, res) {
+router.get('/clientes/:id', function(req, res) {
     Cliente.buscarPorId(req.params.id, function(error, obj) {
         if(error) {
             console.log(error);
@@ -57,7 +57,7 @@ router.get('/clientes/:int(\\d+)', function(req, res) {
  * GET /api/clientes/count
  * Retorna o número de clientes cadastrados.
  **/
-router.get('/clientes/count', function(req, res) {
+router.get('/count/clientes', function(req, res) {
     Cliente.totalCadastrados(function(error, contagem) {
         if(error) {
             console.log(error);
@@ -66,6 +66,23 @@ router.get('/clientes/count', function(req, res) {
         }
         
         res.json({count:contagem});
+    });
+});
+
+
+/* 
+ * DELETE /api/clientes/:int(\\d+)
+ * Exclui um cliente do banco de dados.
+ **/
+router.delete('/clientes/:id', function(req, res) {
+    Cliente.excluir(req.params.id, function(error, cliente) {
+        if(error) {
+            console.log(error);
+            res.status(500).send(error.message);
+            return;
+        }
+        
+        res.status(200).send();
     });
 });
 
